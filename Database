@@ -1,1 +1,14 @@
+# Load web pages
+web_loader1 = WebBaseLoader("https://www.mom.gov.sg/employment-practices/progressive-wage-model/cleaning-sector")
+web_loader2 = WebBaseLoader("https://www.mom.gov.sg/employment-practices/progressive-wage-model/retail-sector")
 
+# Load PDF files
+pdf_loader1 = PyPDFLoader("Tripartite Guidelines/fwa.pdf")
+pdf_loader2 = PyPDFLoader("Legislations/ea.pdf")
+
+# Load Word documents
+doc_loader1 = UnstructuredWordDocumentLoader("wst/ccsb.docx", mode="elements", strategy="fast")
+doc_loader2 = UnstructuredWordDocumentLoader("wst/fpg.docx", mode="elements", strategy="fast")
+
+# Combine all loaders into a list for further processing
+loaders = [web_loader1, web_loader2, pdf_loader1, pdf_loader2, doc_loader1, doc_loader2]
